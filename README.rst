@@ -24,7 +24,8 @@ Requirements
 * An installed SMT solver
 
   The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
-  are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers.
+  are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers. This
+  will be handled below under `Running on a CPU`_ and `Running on a QPU`_. For example, to install z3_:
 
   .. code-block:: bash
 
@@ -143,3 +144,4 @@ Further Reading
 .. _`.dwrc`: http://dwave-micro-client.readthedocs.io/en/latest/#configuration
 .. _`qbsolv's`: https://github.com/dwavesystems/qbsolv
 .. _`dwave_micro_client`: http://dwave-micro-client.readthedocs.io/en/latest/#
+.. _z3: https://github.com/Z3Prover/z3
