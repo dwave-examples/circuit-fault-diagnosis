@@ -18,29 +18,6 @@ multiply, and the circuit's output, P, which represents either a valid or incorr
 The algorithm returns the number of faulty components in the minimum fault diagnosis it found and the number of
 distinct fault states with this many faults it observed.
 
-Requirements
-------------
-
-* An installed SMT solver
-
-  The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
-  are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers. This
-  will be handled below under `Running on a CPU`_ and `Running on a QPU`_. For example, to install z3_:
-
-  .. code-block:: bash
-
-    pysmt-install --z3
-    eval $(pysmt-install --env)
-
-* Access configured to a D-Wave system
-
-  `Running on a QPU`_, requires access to be configured. This requires setting up a `.dwrc`_ configuration file as
-  described in the `dwave_micro_client`_ documentation. A default solver is required. For example:
-
-  .. code-block::
-
-    connection-one|https://one.com,token-one,,solver-one
-
 Running the Demo
 ----------------
 
@@ -52,16 +29,15 @@ file used.
   pip install -r requirements.txt      # to run on CPU
   pip install -r requirements_qpu.txt  # to run on QPU
 
-The :code:`--verbose` option displays the valid/fault status of each component for each minimum fault diagnosis.
-
-.. code-block:: bash
-
-  python demo.py --verbose
-
 Running on a CPU
 ~~~~~~~~~~~~~~~~
 
 The demo constructs a binary quadratic model and uses `qbsolv's`_ tabu search to solve the problem classically.
+
+The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
+are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers.
+
+First, install the requirements:
 
 .. code-block:: bash
 
@@ -80,6 +56,15 @@ Running on a QPU
 
 The demo constructs a binary quadratic model and minor-embeds it on the D-Wave system.
 
+Access to a D-Wave system must be configured. This requires setting up a `.dwrc`_ configuration file as
+described in the `dwave_micro_client`_ documentation. A default solver is required. For example:
+
+.. code-block::
+
+  connection-one|https://one.com,token-one,,solver-one
+
+First, install the requirements:
+
 .. code-block:: bash
 
   pip install -r requirements_qpu.txt
@@ -91,6 +76,15 @@ accept the license terms when prompted
 
   eval $(pysmt-install --env)
   python demo.py
+  
+Advanced Options
+~~~~~~~~~~~~~~~~
+
+The :code:`--verbose` option displays the valid/fault status of each component for each minimum fault diagnosis.
+
+.. code-block:: bash
+
+  python demo.py --verbose
 
 Interesting Use Cases
 ---------------------
