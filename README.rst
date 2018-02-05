@@ -15,8 +15,8 @@ multiply, and the circuit's output, P, which represents either a valid or incorr
   Input multiplicand   ( 0 <= B <=  7):
   Input product        ( 0 <= P <= 63):
 
-The algorithm returns the number of faulty components in the minimum fault diagnosis it found and the number of
-distinct fault states with this many faults it observed.
+The algorithm returns the minimum fault diagnosis (the smallest number of faulty components it found to cause the given
+inputs and product) and the number of distinct fault states with this many faults it observed.
 
 Running the Demo
 ----------------
@@ -29,22 +29,22 @@ file used.
   pip install -r requirements.txt      # to run on CPU
   pip install -r requirements_qpu.txt  # to run on QPU
 
+The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
+are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers.
+
 Running on a CPU
 ~~~~~~~~~~~~~~~~
 
 The demo constructs a binary quadratic model and uses `qbsolv's`_ tabu search to solve the problem classically.
 
-The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
-are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers.
-
-First, install the requirements:
+First, install the required files:
 
 .. code-block:: bash
 
   pip install -r requirements.txt
   pysmt-install --z3
 
-accept the license terms when prompted
+Accept the license terms when prompted.
 
 .. code-block:: bash
 
@@ -63,20 +63,20 @@ described in the `dwave_micro_client`_ documentation. A default solver is requir
 
   connection-one|https://one.com,token-one,,solver-one
 
-First, install the requirements:
+First, install the required files:
 
 .. code-block:: bash
 
   pip install -r requirements_qpu.txt
   pysmt-install --z3
 
-accept the license terms when prompted
+Accept the license terms when prompted.
 
 .. code-block:: bash
 
   eval $(pysmt-install --env)
   python demo.py
-  
+
 Advanced Options
 ~~~~~~~~~~~~~~~~
 
