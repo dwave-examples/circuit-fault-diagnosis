@@ -28,7 +28,7 @@ file used.
 
   pip install -r requirements.txt      # to run on CPU
   pip install -r requirements_qpu.txt  # to run on QPU
-
+  
 The demo code has a dependency on `penaltymodel_maxgap`_, which requires that an SMT solver is installed. The solvers
 are accessed through the pysmt_ package. See the accompanying *pysmt* documentation for installing smt solvers.
 
@@ -42,13 +42,11 @@ First, install the required files:
 .. code-block:: bash
 
   pip install -r requirements.txt
-  pysmt-install --z3
 
-Accept the license terms when prompted.
+Use :code:`pysmt-install` as outlined in the `pysmt installation instructions`_ to setup an smt solver.
 
 .. code-block:: bash
 
-  eval $(pysmt-install --env)
   python demo.py
 
 Running on a QPU
@@ -68,13 +66,11 @@ First, install the required files:
 .. code-block:: bash
 
   pip install -r requirements_qpu.txt
-  pysmt-install --z3
 
-Accept the license terms when prompted.
+Use :code:`pysmt-install` as outlined in the `pysmt installation instructions`_ to setup an smt solver.
 
 .. code-block:: bash
 
-  eval $(pysmt-install --env)
   python demo.py
 
 Advanced Options
@@ -139,3 +135,4 @@ Further Reading
 .. _`qbsolv's`: https://github.com/dwavesystems/qbsolv
 .. _`dwave_micro_client`: http://dwave-micro-client.readthedocs.io/en/latest/#
 .. _z3: https://github.com/Z3Prover/z3
+.. _`pysmt installation instructions`: https://github.com/pysmt/pysmt#installation
