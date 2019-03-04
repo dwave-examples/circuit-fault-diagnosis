@@ -1,3 +1,10 @@
+Code Relocation
+---------------
+
+Please note that this Circuit Fault Diagnosis demo has been relocated to and will be maintained in LINK.
+
+The existing repository seen on this page will no longer be updated.
+
 Demo of Circuit Fault Diagnosis
 ===============================
 
