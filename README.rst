@@ -1,11 +1,6 @@
-.. raw:: html
-    <embed>
-        <div class="alert alert-success">
-        Please note that this Circuit Fault Diagnosis demo has been relocated to and will be maintained in
-        the `dwavesystems/demos <https://github.com/dwavesystems/demos/tree/master/circuit-fault-diagnosis>`_ repo.
-        The existing repository seen on this page will no longer be updated.
-        </div>
-    </embed>
+**WARNING**: Please note that this Circuit Fault Diagnosis demo has been relocated to and will be
+maintained in the `dwavesystems/demos <https://github.com/dwavesystems/demos/tree/master/circuit-fault-diagnosis>`_
+repo. The existing repository seen on this page will no longer be updated.
 
 Demo of Circuit Fault Diagnosis
 ===============================
