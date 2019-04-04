@@ -1,6 +1,5 @@
-**WARNING**: This Circuit Fault Diagnosis demo has been relocated to and will be maintained in the
-`dwavesystems/demos <https://github.com/dwavesystems/demos/tree/master/circuit-fault-diagnosis>`_
-repo. The existing repository seen on this page will no longer be updated.
+**WARNING**: This repository is obsolete. The Circuit Fault Diagnosis demo is now maintained in
+`dwavesystems/demos <https://github.com/dwavesystems/demos/tree/master/circuit-fault-diagnosis>`_.
 
 Demo of Circuit Fault Diagnosis
 ===============================
