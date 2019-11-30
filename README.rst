@@ -8,7 +8,9 @@ observation of incorrect outputs given a set of inputs.
 Usage
 -----
 Run ``demo.py`` and then follow the on-screen instructions.
-::
+
+.. code-block:: bash
+
   python demo.py
 
 Code Overview
