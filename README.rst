@@ -1,5 +1,5 @@
-Demo of Circuit Fault Diagnosis
-===============================
+Circuit Fault Diagnosis
+=======================
 Fault diagnosis is the combinational problem of quickly localizing failures as
 soon as they are detected in systems. Circuit fault diagnosis is the problem of
 identifying a minimum-sized set of components that, if faulty, explains an
