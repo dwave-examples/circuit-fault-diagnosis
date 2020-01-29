@@ -70,7 +70,7 @@ these four cases:
   A = 7; B = 4; P = 35
   A = 4; B = 7; P = 35
 
-Four faulty components, whi../ch is the maximum number of faulty components for a
+Four faulty components, which is the maximum number of faulty components for a
 minimum fault diagnosis for this circuit, lead to five incorrect bits in the
 product's six bits in this case (one of many such cases):
 
