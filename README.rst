@@ -1,3 +1,7 @@
+.. image:: https://circleci.com/gh/dwave-examples/circuit-fault-diagnosis.svg?style=svg
+    :target: https://circleci.com/gh/dwave-examples/circuit-fault-diagnosis
+    :alt: Linux/Mac/Windows build status
+
 =======================
 Circuit Fault Diagnosis
 =======================
