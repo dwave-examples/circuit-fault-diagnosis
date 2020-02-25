@@ -59,22 +59,16 @@ def gate_model(gate_type, fault=True):
     labels, configurations = GATES[gate_type]
     if fault:
         configurations = fault_gate(configurations, FAULT_GAP)
-    size = len(next(iter(configurations)))
-    while True:
+    num_variables = len(next(iter(configurations)))
+    for size in range(num_variables, num_variables+4):  # reasonable margin
         G = nx.complete_graph(size)
         nx.relabel_nodes(G, dict(enumerate(labels)), copy=False)
         spec = pm.Specification(G, labels, configurations, dimod.SPIN)
         try:
             pmodel = pm.get_penalty_model(spec)
-            print(pmodel)
-            if not pmodel:
-                raise LookupError("failed to get penalty model from factory")
-            # print("penalty model fits on K{}".format(size))
-            break
+            if pmodel is not None:
+                return pmodel
         except pm.ImpossiblePenaltyModel:
-            # print("penalty model does not fit on K{}".format(size))
-            size += 1
+            pass
 
-    # print('h: {}'.format(pmodel.model.linear))
-    # print('J: {}\n'.format(pmodel.model.quadratic))
-    return pmodel
+    raise ValueError("unable to get the penalty model from factories")
