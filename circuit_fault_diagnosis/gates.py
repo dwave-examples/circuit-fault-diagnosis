@@ -66,6 +66,7 @@ def gate_model(gate_type, fault=True):
         spec = pm.Specification(G, labels, configurations, dimod.SPIN)
         try:
             pmodel = pm.get_penalty_model(spec)
+            print(pmodel)
             if not pmodel:
                 raise LookupError("failed to get penalty model from factory")
             # print("penalty model fits on K{}".format(size))
