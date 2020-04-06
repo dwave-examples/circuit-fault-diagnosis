@@ -1,4 +1,4 @@
-dwave-ocean-sdk==2.0.1
+dwave-ocean-sdk==2.1.1
 penaltymodel-maxgap==0.5.2
 pandas==1.0.1
 networkx==2.4
