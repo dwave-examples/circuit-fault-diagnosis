@@ -17,12 +17,15 @@ from subprocess import Popen, PIPE ,STDOUT
 import unittest
 import os
 import time
+import sys
+
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class IntegrationTests(unittest.TestCase):
 
     def test_circuit_fault_diagnosis(self):
-        cwd=os.getcwd()
-        p = Popen(["python",  cwd+"/demo.py"], stdout=PIPE, stdin=PIPE, stderr=STDOUT)    
+        demo_file = os.path.join(project_dir, 'demo.py')
+        p = Popen([sys.executable,  demo_file], stdout=PIPE, stdin=PIPE, stderr=STDOUT)    
         p.stdin.write(b'3\n')
         time.sleep(0.5)
         p.stdin.write(b'5\n')
@@ -32,8 +35,8 @@ class IntegrationTests(unittest.TestCase):
         output = p.communicate()[0]
         time.sleep(0.5)
         output=str(output)
-        print("Example output \n"+output)
-
+        if os.getenv('DEBUG_OUTPUT'):
+            print("Example output \n"+ output)
 
         with self.subTest(msg="Verify if output contains 'The minimum fault diagnosis found' \n"):
             self.assertIn("The minimum fault diagnosis found".upper(),output.upper())
