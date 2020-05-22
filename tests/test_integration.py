@@ -12,20 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import subprocess
-from subprocess import Popen, PIPE ,STDOUT
-import unittest
 import os
-import time
 import sys
+import unittest
+from subprocess import Popen, PIPE ,STDOUT
 
 project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 class IntegrationTests(unittest.TestCase):
 
     def test_circuit_fault_diagnosis(self):
         demo_file = os.path.join(project_dir, 'demo.py')
-        p = Popen([sys.executable, demo_file], stdout=PIPE, stdin=PIPE, stderr=STDOUT)    
+        p = Popen([sys.executable, demo_file],
+                  stdout=PIPE, stdin=PIPE, stderr=STDOUT)
         p.stdin.write(b'3\n')
         p.stdin.write(b'5\n')
         p.stdin.write(b'45\n')
