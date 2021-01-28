@@ -87,7 +87,10 @@ if __name__ == '__main__':
     # find embedding and put on system
     print("Running using QPU\n")
     sampler = EmbeddingComposite(DWaveSampler())
-    response = sampler.sample_ising(bqm.linear, bqm.quadratic, num_reads=NUM_READS)
+    response = sampler.sample_ising(bqm.linear,
+                                    bqm.quadratic,
+                                    num_reads=NUM_READS,
+                                    label='Example - Circuit Fault Diagnosis')
 
     ####################################################################################################
     # output results
