@@ -1,2 +1,2 @@
-dwave-ocean-sdk>=3.0.0
+dwave-ocean-sdk>=3.3.0
 pandas==1.0.1
