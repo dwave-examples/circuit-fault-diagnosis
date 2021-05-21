@@ -21,7 +21,7 @@ project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class IntegrationTests(unittest.TestCase):
-
+    @unittest.skipIf(os.getenv('SKIP_INT_TESTS'), "Skipping integration test.")
     def test_circuit_fault_diagnosis(self):
         demo_file = os.path.join(project_dir, 'demo.py')
         p = Popen([sys.executable, demo_file],
@@ -44,4 +44,3 @@ class IntegrationTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    
